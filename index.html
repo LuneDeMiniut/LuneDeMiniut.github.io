@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Web Page</title>
+    <title>Myself</title>
     <style>
         body {
             font-family: sans-serif;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
             color: #333;
         }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1, p, .button-container {
+            margin-bottom: 50px; /* Ensures equal spacing */
+        }
         .button-container {
             display: flex;
             justify-content: center;
             gap: 50px; /* Ensures equal spacing */
-            width: 100%; /* Ensures full width alignment */
+            width: 100%;
         }
         button {
             padding: 10px 20px;
@@ -31,6 +39,8 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background 0.3s;
+            width: 150px; /* Ensures all buttons have the same width */
+            height: 50px; /* Ensures all buttons have the same height */
         }
         button:hover {
             background: #333;
@@ -38,14 +48,14 @@
     </style>
 </head>
 <body>
-    <h1>Minimalist Page</h1>
-    <p>A simple and clean design.</p>
-    <div class="button-container">
-        <button onclick="window.location.href='life.html'">Life</button>
-        <button onclick="window.location.href='research.html'">Research</button>
-        <button onclick="window.location.href='future_ideas.html'">Future Ideas</button>
+    <div class="container">
+        <h1>Myself</h1>
+        <p>A simple and clean design.</p>
+        <div class="button-container">
+            <button onclick="window.location.href='life.html'">Life</button>
+            <button onclick="window.location.href='research.html'">Research</button>
+            <button onclick="window.location.href='future_ideas.html'">Future Ideas</button>
+        </div>
     </div>
 </body>
 </html>
-
-
