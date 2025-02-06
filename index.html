@@ -108,7 +108,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px 0;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
         }
@@ -116,8 +116,9 @@
             width: 20px;
             height: 20px;
             background: none;
+            filter: invert(1);
         }
-        .github-button { background: black; color: white; }
+        .github-button { background: black; color: white; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 <body>
@@ -138,23 +139,9 @@
     </div>
     <footer class="footer">
         <a href="https://github.com/LuneDeMiniut" class="github-button" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-icon" style="background: none;">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" class="github-icon">
             GitHub
         </a>
     </footer>
-    
-    <!-- Extra social metadata -->
-    <script type="application/json" id="extra-social">
-    {
-        "extra": {
-            "social": [
-                {
-                    "icon": "fontawesome/brands/github",
-                    "link": "https://github.com/LuneDeMiniut"
-                }
-            ]
-        }
-    }
-    </script>
 </body>
 </html>
