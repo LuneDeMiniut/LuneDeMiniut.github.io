@@ -14,7 +14,7 @@
             height: 100vh;
             margin: 0;
             background: black;
-            overflow: hidden;
+            overflow-x: hidden;
             position: relative;
         }
         
@@ -102,6 +102,7 @@
             text-decoration: none;
         }
         button:hover, .github-button:hover { background: #333; }
+        
         .footer {
             width: 100%;
             background: black;
@@ -109,17 +110,32 @@
             justify-content: center;
             align-items: center;
             padding: 20px 0;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
+            transition: transform 0.3s ease-in-out;
         }
+        
         .github-icon {
             width: 20px;
             height: 20px;
             background: none;
             filter: invert(1);
         }
-        .github-button { background: black; color: white; display: flex; align-items: center; justify-content: center; }
+        .github-button {
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Hide floating footer on desktop */
+        @media (min-width: 769px) {
+            .footer {
+                position: absolute;
+            }
+        }
     </style>
 </head>
 <body>
