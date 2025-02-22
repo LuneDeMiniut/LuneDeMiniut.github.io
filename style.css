@@ -108,7 +108,7 @@
         .footer {
             width: 100%;
             background: var(--bg-color);
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(3px);
             background: rgba(255, 255, 255, 0.3); /* Ensure transparency for blur effect */
             display: flex;
             justify-content: center;
