@@ -52,6 +52,16 @@
             overflow-x: hidden;
         }
 
+         /* Responsive Design */
+        @media (max-width: 768px) {
+            .button-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            button, .github-button {
+                width: 80%;
+            }
+        }
         .container {
             display: flex;
             flex-direction: column;
