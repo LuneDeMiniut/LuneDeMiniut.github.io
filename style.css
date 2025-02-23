@@ -87,6 +87,7 @@
             font-size: 16px;
             border: none;
             background: inherit;
+            box-shadow: 0 4px 10px inherit; /* Soft floating effect */
             color: inherit;
             cursor: pointer;
             border-radius: 5px;
