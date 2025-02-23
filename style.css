@@ -90,6 +90,7 @@
             box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
             color: inherit;
             cursor: pointer;
+            border: 2px solid #ebebeb;    
             border-radius: 5px;
             transition: background 0.3s;
             width: 150px;
@@ -103,7 +104,7 @@
         }
 
         button:hover, .github-button:hover {
-            background: rgba(255, 255, 255, 0.2); /*#a6a4a4*/
+            background: #b8b6b6;
         }
 
         .footer {
