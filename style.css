@@ -87,10 +87,10 @@
             font-size: 16px;
             border: none;
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
             color: inherit;
             cursor: pointer;
-            border: 1.6px outset #ebebeb;    
+            border: 1.6px solid #ebebeb;    
             border-radius: 5px;
             transition: background 0.3s;
             width: 150px;
@@ -108,10 +108,10 @@
             font-size: 16px;
             border: none;
             background: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
+            box-shadow: 0 5px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
             color: inherit;
             cursor: pointer;
-            border: 1.2px outset #ebebeb;    
+            border: 1.2px solid #ebebeb;    
             border-radius: 5px;
             transition: background 0.3s;
             width: 120px;
