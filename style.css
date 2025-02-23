@@ -111,10 +111,10 @@
             box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft floating effect */
             color: inherit;
             cursor: pointer;
-            border: 2px solid #ebebeb;    
+            border: 1.2px solid #ebebeb;    
             border-radius: 5px;
             transition: background 0.3s;
-            width: 150px;
+            width: 100px;
             height: 50px;
             display: flex;
             align-items: center;
