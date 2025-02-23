@@ -103,7 +103,7 @@
         }
 
         button:hover, .github-button:hover {
-            background: #a6a4a4;
+            background: rgba(255, 255, 255, 0.2); /*#a6a4a4*/
         }
 
         .footer {
