@@ -144,7 +144,7 @@
             height: 80vw;
             max-width: 500px;
             max-height: 500px;
-            background: radial-gradient(circle, #5c9abf, #005f99, #0088cc);
+            background: radial-gradient(circle, #5c9abf, #005f99, #0088cc, #0096e0);
             border-radius: 50%;
             filter: blur(100px);
             opacity: 0.8;
