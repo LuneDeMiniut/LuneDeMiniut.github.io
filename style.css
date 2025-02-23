@@ -152,8 +152,9 @@
         }
         
         .blob:nth-child(1) { top: 10%; left: 10%; animation-duration: 7s; }
-        .blob:nth-child(2) { top: 50%; left: 60%; animation-duration: 8s; }
-        .blob:nth-child(3) { top: 80%; left: 35%; animation-duration: 10s; }
+        .blob:nth-child(2) { top: 10%; left: 60%; animation-duration: 8s; }
+        .blob:nth-child(3) { top: 50%; left: 60%; animation-duration: 8s; }
+        .blob:nth-child(4) { top: 80%; left: 35%; animation-duration: 10s; }
         
         @keyframes moveBlobs {
             0% { transform: translateY(0px) translateX(0px) scale(1); }
