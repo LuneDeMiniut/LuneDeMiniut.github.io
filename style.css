@@ -60,7 +60,7 @@
                 flex-direction: column;
                 gap: 20px;
             }
-            button, .github-button {
+            button, .github-icon {
                 width: 80%;
             }
         }
@@ -131,7 +131,7 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .github-icon-container {
+        .github-icon {
             width: 24px;
             height: 24px;
             align-items: center;
