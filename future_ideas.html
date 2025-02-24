@@ -92,32 +92,41 @@
         }
         
         function addCoverFlowNavigation() {
-            const coverFlow = document.getElementById('cover-flow');
-            const albums = Array.from(coverFlow.getElementsByClassName('album'));
-            let currentIndex = 0;
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
             
-            function updateCoverFlow() {
-                albums.forEach((album, index) => {
-                    album.className = 'album ' + (index === currentIndex ? 'center' : index === currentIndex + 1 ? 'next' : index === currentIndex - 1 ? 'prev' : 'hidden');
-                });
-            }
-            
-            document.getElementById('next-btn').addEventListener('click', () => {
-                if (currentIndex < albums.length - 1) {
-                    currentIndex++;
-                    updateCoverFlow();
-                }
-            });
-        
-            document.getElementById('prev-btn').addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateCoverFlow();
-                }
-            });
-        
-            updateCoverFlow(); // Initialize cover flow state
+            if (!nextBtn || !prevBtn) {
+                console.error("Navigation buttons not found in the DOM.");
+                return;
         }
+    
+        const coverFlow = document.getElementById('cover-flow');
+        const albums = Array.from(coverFlow.getElementsByClassName('album'));
+        let currentIndex = 0;
+    
+        function updateCoverFlow() {
+            albums.forEach((album, index) => {
+                album.className = 'album ' + (index === currentIndex ? 'center' : index === currentIndex + 1 ? 'next' : index === currentIndex - 1 ? 'prev' : 'hidden');
+            });
+        }
+    
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < albums.length - 1) {
+                currentIndex++;
+                updateCoverFlow();
+            }
+        });
+    
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCoverFlow();
+            }
+        });
+
+    updateCoverFlow(); // Initialize cover flow state
+}
+
         
         document.addEventListener("DOMContentLoaded", fetchAlbums);
 
