@@ -78,10 +78,11 @@
         
         function displayAlbums(albums) {
             const coverFlow = document.getElementById('cover-flow');
+            coverFlow.innerHTML = ""; // Clear previous entries
             coverFlow.innerHTML = albums.map((album, i) => `
                 <div class="album ${i === 0 ? 'center' : i === 1 ? 'next' : 'prev'}">
                     <a href="${album.previewUrl}" target="_blank">
-                        <img src="${album.cover}" alt="${album.title}">
+                        <img src="${album.cover}" alt="${album.title}" loading="lazy">
                     </a>
                     <p>${album.title} (${album.year})</p>
                 </div>
@@ -118,7 +119,7 @@
             updateCoverFlow(); // Initialize cover flow state
         }
         
-        fetchAlbums();
+        document.addEventListener("DOMContentLoaded", fetchAlbums);
 
     </script>
 </body>
