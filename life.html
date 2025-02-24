@@ -75,7 +75,8 @@
                     !album.collectionName.toLowerCase().includes("live") && 
                     !album.collectionName.toLowerCase().includes("compilation") && 
                     !album.collectionName.toLowerCase().includes("greatest hits") && 
-                    !album.collectionName.toLowerCase().includes("soundtrack")
+                    !album.collectionName.toLowerCase().includes("soundtrack") &&
+                    !album.collectionName.toLowerCase().includes("volume")
                 );
         
                 const albums = studioAlbums.map(album => ({
