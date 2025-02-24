@@ -120,7 +120,7 @@
             width: 100%;
             background: var(--bg-color);
             backdrop-filter: blur(3px);
-            background: rgba(255, 255, 255, 0.3); /* Ensure transparency for blur effect */
+            background: rgba(255, 255, 255, 0.2); /* Ensure transparency for blur effect */
             display: flex;
             justify-content: center;
             align-items: center;
