@@ -3,6 +3,15 @@
             src: url('https://developer.apple.com/fonts/SF-Pro.ttf') format('truetype');
         }
 
+        @font-face {
+            font-family: 'Noto Sans TC';
+            src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+        }
+        
+        html:lang(zh-TW) {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
         :root {
             --bg-color-light: white;
             --text-color-light: black;
