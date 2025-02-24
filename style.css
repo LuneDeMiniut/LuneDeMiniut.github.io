@@ -152,9 +152,18 @@
             transition: transform 0.3s ease-in-out;
         }
 
-        .github-icon {
-            width: 24px;
-            height: 24px;
+        .footer img.github-icon {
+            width: 32px; /* Adjust size as needed */
+            height: auto;
+            opacity: 0.8; /* Slight transparency for blending */
+            mix-blend-mode: soft-light; /* Try 'multiply' or 'overlay' for different effects */
+            filter: brightness(85%) contrast(120%);
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .footer img.github-icon:hover {
+            opacity: 1; /* Fully visible on hover */
+            filter: brightness(100%) contrast(100%);
         }
 
         /* Blob Animation */
