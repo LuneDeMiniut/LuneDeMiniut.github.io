@@ -27,5 +27,15 @@
             GitHub
         </a>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const userLang = navigator.language || navigator.userLanguage;
+            document.querySelectorAll("button").forEach(button => {
+                const newText = button.getAttribute(`data-${userLang}`);
+                if (newText) button.textContent = newText;
+            });
+        });
+    </script>
 </body>
 </html>
