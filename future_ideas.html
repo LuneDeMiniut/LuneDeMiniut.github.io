@@ -79,6 +79,7 @@
         function displayAlbums(albums) {
             const coverFlow = document.getElementById('cover-flow');
             coverFlow.innerHTML = ""; // Clear previous entries
+            
             coverFlow.innerHTML = albums.map((album, i) => `
                 <div class="album ${i === 0 ? 'center' : i === 1 ? 'next' : 'prev'}">
                     <a href="${album.previewUrl}" target="_blank">
@@ -88,8 +89,15 @@
                 </div>
             `).join('');
         
-            addCoverFlowNavigation();
+            // Add navigation buttons dynamically
+            coverFlow.insertAdjacentHTML('afterend', `
+                <button id="prev-btn">Previous</button>
+                <button id="next-btn">Next</button>
+            `);
+        
+            addCoverFlowNavigation(); // Attach event listeners after elements exist
         }
+
         
         function addCoverFlowNavigation() {
             const nextBtn = document.getElementById('next-btn');
