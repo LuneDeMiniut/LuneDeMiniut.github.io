@@ -27,32 +27,5 @@
             GitHub
         </a>
     </footer>
-
-    <script>
-        function navigateTo(page) {
-            window.location.href = page;
-        }
-        function applyTheme() {
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.style.background = "var(--background-dark)";
-                document.body.style.color = "var(--text-dark)";
-            } else {
-                document.body.style.background = "var(--background-light)";
-                document.body.style.color = "var(--text-light)";
-            }
-        }
-        function applyLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            if (userLang.startsWith("zh")) {
-                document.getElementById("title").textContent = "我";
-                document.getElementById("life-btn").textContent = "生活";
-                document.getElementById("research-btn").textContent = "研究";
-                document.getElementById("future-btn").textContent = "未来想法";
-            }
-        }
-        applyTheme();
-        applyLanguage();
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
-    </script>
 </body>
 </html>
