@@ -162,42 +162,36 @@
         }
 
         
-        function addCoverFlowNavigation() {
-            const nextBtn = document.getElementById('next-btn');
-            const prevBtn = document.getElementById('prev-btn');
-            
-            if (!nextBtn || !prevBtn) {
-                console.error("Navigation buttons not found in the DOM.");
-                return;
+        function displayAlbums(albums) {
+            const coverFlow = document.getElementById('cover-flow');
+            coverFlow.innerHTML = ""; // Clear previous entries
+            coverFlow.innerHTML = albums.map(album => `
+                <div class="album">
+                    <a href="${album.previewUrl}" target="_blank">
+                        <img src="${album.cover}" alt="${album.title}" loading="lazy">
+                    </a>
+                    <p>${album.title} (${album.year})</p>
+                </div>
+            `).join('');
+        
+            enableScrollEffect();
         }
-    
-        const coverFlow = document.getElementById('cover-flow');
-        const albums = Array.from(coverFlow.getElementsByClassName('album'));
-        let currentIndex = 0;
-    
-        function updateCoverFlow() {
-            albums.forEach((album, index) => {
-                album.className = 'album ' + (index === currentIndex ? 'center' : index === currentIndex + 1 ? 'next' : index === currentIndex - 1 ? 'prev' : 'hidden');
+        
+        function enableScrollEffect() {
+            const coverFlow = document.getElementById('cover-flow');
+            coverFlow.style.overflowX = 'auto';
+            coverFlow.style.whiteSpace = 'nowrap';
+            coverFlow.style.scrollSnapType = 'x mandatory';
+            coverFlow.style.display = 'flex';
+            coverFlow.style.gap = '10px';
+            coverFlow.style.padding = '10px';
+            
+            document.querySelectorAll('.album').forEach(album => {
+                album.style.scrollSnapAlign = 'center';
+                album.style.flex = '0 0 auto';
+                album.style.width = '200px'; // Adjust as needed for responsiveness
             });
         }
-    
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < albums.length - 1) {
-                currentIndex++;
-                updateCoverFlow();
-            }
-        });
-    
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCoverFlow();
-            }
-        });
-
-    updateCoverFlow(); // Initialize cover flow state
-}
-
         
         document.addEventListener("DOMContentLoaded", fetchAlbums);
 
