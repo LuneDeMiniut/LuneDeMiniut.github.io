@@ -55,6 +55,49 @@
         #prev-btn { left: 10px; }
         #next-btn { right: 10px; }
 
+        @media screen and (max-width: 768px) {
+        #cover-flow {
+            height: 200px; /* Reduce height */
+        }
+    
+        .album img {
+            width: 150px; /* Smaller images */
+            height: auto;
+        }
+    
+        .album.center {
+            transform: scale(1); /* Reduce zoom-in effect */
+        }
+    
+        .album.next, .album.prev {
+            transform: translateX(80px) scale(0.7); /* Reduce spacing */
+        }
+    
+        #prev-btn, #next-btn {
+            font-size: 14px; /* Smaller buttons */
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        #cover-flow {
+            height: 150px; /* Further reduce height */
+        }
+    
+        .album img {
+            width: 120px; /* Even smaller images */
+        }
+    
+        .album.next, .album.prev {
+            transform: translateX(60px) scale(0.6); /* Reduce spacing */
+        }
+    
+        #prev-btn, #next-btn {
+            font-size: 12px;
+            padding: 5px 10px;
+        }
+    }
+
+
     </style>
 </head>
 <body>
