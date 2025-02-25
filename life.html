@@ -151,29 +151,7 @@
                     <p>${album.title} (${album.year})</p>
                 </div>
             `).join('');
-        
-            // Add navigation buttons dynamically
-            coverFlow.insertAdjacentHTML('afterend', `
-                <button id="prev-btn">Previous</button>
-                <button id="next-btn">Next</button>
-            `);
-        
-            addCoverFlowNavigation(); // Attach event listeners after elements exist
-        }
-
-        
-        function displayAlbums(albums) {
-            const coverFlow = document.getElementById('cover-flow');
-            coverFlow.innerHTML = ""; // Clear previous entries
-            coverFlow.innerHTML = albums.map(album => `
-                <div class="album">
-                    <a href="${album.previewUrl}" target="_blank">
-                        <img src="${album.cover}" alt="${album.title}" loading="lazy">
-                    </a>
-                    <p>${album.title} (${album.year})</p>
-                </div>
-            `).join('');
-        
+            
             enableScrollEffect();
         }
         
