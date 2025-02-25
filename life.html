@@ -107,7 +107,7 @@
 
         async function fetchAlbums() {
             try {
-                const response = await fetch('https://itunes.apple.com/search?term=coldplay&entity=album&limit=20');
+                const response = await fetch('https://itunes.apple.com/search?term=radiohead&entity=album&limit=20');
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
                 
                 const data = await response.json();
@@ -118,8 +118,7 @@
                     !album.collectionName.toLowerCase().includes("live") && 
                     !album.collectionName.toLowerCase().includes("compilation") && 
                     !album.collectionName.toLowerCase().includes("greatest hits") && 
-                    !album.collectionName.toLowerCase().includes("soundtrack") &&
-                    !album.collectionName.toLowerCase().includes("volume")
+                    !album.collectionName.toLowerCase().includes("soundtrack")
                 );
         
                 const albums = studioAlbums.map(album => ({
@@ -142,16 +141,15 @@
         function displayAlbums(albums) {
             const coverFlow = document.getElementById('cover-flow');
             coverFlow.innerHTML = ""; // Clear previous entries
-            
-            coverFlow.innerHTML = albums.map((album, i) => `
-                <div class="album ${i === 0 ? 'center' : i === 1 ? 'next' : 'prev'}">
+            coverFlow.innerHTML = albums.map(album => `
+                <div class="album">
                     <a href="${album.previewUrl}" target="_blank">
                         <img src="${album.cover}" alt="${album.title}" loading="lazy">
                     </a>
                     <p>${album.title} (${album.year})</p>
                 </div>
             `).join('');
-            
+        
             enableScrollEffect();
         }
         
