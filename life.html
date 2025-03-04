@@ -107,6 +107,19 @@
             width: 90%;
         }
 
+        .info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info img:hover {
+            transform: scale(1.1);
+        }
+
         @media (min-width: 768px) {
             .container {
                 flex-direction: row;
@@ -124,7 +137,7 @@
 </head>
 <body>
     <div class="wave" id="wave"></div>
-    <div class="title">The Songs I Heard</div>
+    <div class="title">Playlists for Life</div>
     <div class="container">
         <div class="gallery" id="gallery">
             <div class="playlist" onclick="showInfo('03/03/2025', 'https://music.apple.com/tw/playlist/03-03-2025-morning/pl.u-XkD0Y6MuDWDZ4Pq?l=en', 'It is a sunshine day with warm wind.')">03/03/2025</div>
@@ -136,15 +149,12 @@
         </div>
     </div>
     <script>
-        function showInfo(title, link, caption) {
+        function showInfo(title, link, caption, image) {
             document.getElementById('info').innerHTML = `
+                <img src="${image}" alt="${title}" onclick="window.open('${link}', '_blank')">
                 <h2>${title}</h2>
                 <p>${caption}</p>
-                <a href="${link}" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Apple_Music_logo.svg" 
-                         alt="Apple Music" 
-                         style="width: 50px; height: 50px; vertical-align: middle;">
-                </a>`;
+            `;
         }
     </script>
 </body>
