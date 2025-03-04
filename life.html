@@ -156,7 +156,17 @@
                 <p>${caption}</p>
             `;
         }
+
+        function showInfo(title, link, caption, image) {
+        document.getElementById('info').innerHTML = `
+            <img src="${image}" alt="${title}" onclick="window.open('${link}', '_blank')">
+            <h2>${title}</h2>
+            <p>${caption}</p>
+            <a href="${link}" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Apple_Music_icon.svg/1024px-Apple_Music_icon.svg.png" class="apple-music-icon" alt="Apple Music">
+            </a>
+        `;
+    }
     </script>
 </body>
 </html>
-
