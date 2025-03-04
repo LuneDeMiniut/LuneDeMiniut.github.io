@@ -183,15 +183,14 @@
         </div>
     </div>
     <script>
-        function showInfo(title, link, caption, image) {
+    function showInfo(title, link, caption, image) {
         document.getElementById('info').innerHTML = `
             <img src="${image}" alt="${title}" onclick="window.open('${link}', '_blank')">
             <h2>${title}</h2>
             <p>${caption}</p>
-            
-        ';
+        `;
     }
-    </script>
+</script>
 
     <footer class="footer">
         <a>
