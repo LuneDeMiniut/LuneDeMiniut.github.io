@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Playlist Gallery</title>
     <style>
         @font-face {
@@ -27,6 +27,7 @@
             background: var(--theme-color);
             align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .wave {
@@ -50,30 +51,28 @@
         }
 
         .title {
-            font-size: 2.5em;
+            font-size: 2em;
             font-weight: bold;
-            padding: 20px;
+            padding: 10px;
             color: var(--text-light);
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 10px;
+            left: 10px;
         }
 
         .container {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            width: 80%;
-            gap: 40px;
+            width: 90%;
+            gap: 20px;
         }
 
         .gallery {
             display: flex;
-            flex-direction: row;
-            gap: 15px;
-            align-items: center;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 10px;
             padding: 20px;
         }
 
@@ -88,7 +87,7 @@
             border: 2px solid rgba(255, 255, 255, 0.8);
             background-color: var(--theme-color);
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
         }
 
         .playlist:hover {
@@ -96,13 +95,27 @@
         }
 
         .info {
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
             background-color: var(--theme-color);
             text-align: center;
-            width: 50%;
+            width: 90%;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+                justify-content: center;
+            }
+            .gallery {
+                flex-direction: row;
+                gap: 15px;
+            }
+            .info {
+                width: 50%;
+            }
         }
     </style>
 </head>
