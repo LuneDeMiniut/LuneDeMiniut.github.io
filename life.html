@@ -6,17 +6,12 @@
     <title>Playlist Gallery</title>
     <style>
         :root {
-            --bg-light: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
-            --bg-dark: linear-gradient(to bottom, #2d2d2d, #000);
+            --theme-color: rgba(173, 216, 230, 0.7);
             --text-light: #222;
             --text-dark: white;
-            --card-light: rgba(255, 255, 255, 0.6);
-            --card-dark: rgba(68, 68, 68, 0.6);
         }
 
         body {
-            background: var(--bg-light);
-            color: var(--text-light);
             font-family: Arial, sans-serif;
             margin: 0;
             display: flex;
@@ -25,6 +20,7 @@
             justify-content: center;
             transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
             overflow: hidden;
+            background: var(--theme-color);
         }
 
         .wave {
@@ -34,7 +30,7 @@
             top: 0;
             left: 0;
             z-index: -1;
-            background: url('https://svgwave.in/api?width=1920&height=1080&stroke=0&fill=rgba(255,255,255,0.6)');
+            background: url('https://svgwave.in/api?width=1920&height=1080&stroke=0&fill=173,216,230');
             animation: waveAnimation 10s infinite linear alternate;
         }
 
@@ -69,6 +65,8 @@
             transition: transform 0.3s ease-in-out, background 0.3s;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            background-color: var(--theme-color);
         }
 
         .playlist:hover {
@@ -77,26 +75,16 @@
 
         .info {
             flex: 1;
-            background: var(--card-light);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: var(--bg-dark);
-                color: var(--text-dark);
-            }
-            .info {
-                background: var(--card-dark);
-            }
+            background-color: var(--theme-color);
         }
     </style>
 </head>
 <body>
-    <div class="wave"></div>
+    <div class="wave" id="wave"></div>
     <div class="container">
         <div class="gallery" id="gallery">
             <div class="playlist" onclick="showInfo('03/03/2025', 'https://music.apple.com/tw/playlist/03-03-2025-morning/pl.u-XkD0Y6MuDWDZ4Pq?l=en')">03/03/2025</div>
@@ -108,15 +96,6 @@
         </div>
     </div>
     <script>
-        function getRandomLightColor() {
-            const colors = ['rgba(255, 182, 193, 0.7)', 'rgba(173, 216, 230, 0.7)', 'rgba(144, 238, 144, 0.7)', 'rgba(255, 239, 213, 0.7)', 'rgba(221, 160, 221, 0.7)', 'rgba(240, 230, 140, 0.7)'];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
-
-        document.querySelectorAll('.playlist').forEach(playlist => {
-            playlist.style.backgroundColor = getRandomLightColor();
-        });
-
         function showInfo(title, link) {
             document.getElementById('info').innerHTML = `
                 <h2>${title}</h2>
