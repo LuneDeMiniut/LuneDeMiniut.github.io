@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const playlists = [
-  { id: 1, title: "Chill Vibes", link: "https://music.apple.com/your-link-1" },
+  { id: 1, title: "03/03/2025", link: "https://music.apple.com/tw/playlist/03-03-2025-morning/pl.u-XkD0Y6MuDWDZ4Pq?l=en" },
   { id: 2, title: "Workout Boost", link: "https://music.apple.com/your-link-2" },
   { id: 3, title: "Late Night Jazz", link: "https://music.apple.com/your-link-3" },
   // Add more playlists manually
