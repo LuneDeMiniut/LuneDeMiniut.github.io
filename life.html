@@ -109,3 +109,139 @@
 </body>
 </html>
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Gallery</title>
+    <style>
+        @font-face {
+            font-family: 'SF Pro Text';
+            src: url('https://developer.apple.com/fonts/SF-Pro.ttf') format('truetype');
+        }
+        
+        :root {
+            --theme-color: rgba(173, 216, 230, 0.7);
+            --text-light: #222;
+            --text-dark: white;
+        }
+
+        body {
+            font-family: 'SF Pro Text', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+            overflow: hidden;
+            background: var(--theme-color);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wave {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: url('https://svgwave.in/api?width=1920&height=1080&stroke=0&fill=173,216,230');
+            animation: waveAnimation 10s infinite linear alternate;
+        }
+
+        @keyframes waveAnimation {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .title {
+            font-size: 2.5em;
+            font-weight: bold;
+            padding: 20px;
+            color: var(--text-light);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            gap: 40px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .playlist {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background 0.3s;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            background-color: var(--theme-color);
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .playlist:hover {
+            transform: translateY(-5px);
+        }
+
+        .info {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            background-color: var(--theme-color);
+            text-align: center;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="wave" id="wave"></div>
+    <div class="title">The Songs I Heard</div>
+    <div class="container">
+        <div class="gallery" id="gallery">
+            <div class="playlist" onclick="showInfo('03/03/2025', 'https://music.apple.com/tw/playlist/03-03-2025-morning/pl.u-XkD0Y6MuDWDZ4Pq?l=en', 'Relax and unwind with these soothing tracks.')">03/03/2025</div>
+            <div class="playlist" onclick="showInfo('10/22/2024', 'https://music.apple.com/tw/playlist/10-22-2024/pl.u-XkD0YEZiDWDZ4Pq?l=en', 'High-energy tracks to keep you motivated.')">10/22/2024</div>
+            <div class="playlist" onclick="showInfo('06/25/2024', 'https://music.apple.com/tw/playlist/06-25-2024-night/pl.u-EdAVvabIaNaMXYx?l=en', 'Smooth jazz for a perfect late-night mood.')">06/25/2024</div>
+        </div>
+        <div class="info" id="info">
+            <p>Select a playlist to see details.</p>
+        </div>
+    </div>
+    <script>
+        function showInfo(title, link, caption) {
+            document.getElementById('info').innerHTML = `
+                <h2>${title}</h2>
+                <p>${caption}</p>
+                <a href="${link}" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Apple_Music_logo.svg" 
+                         alt="Apple Music" 
+                         style="width: 40px; height: 40px; vertical-align: middle;">
+                </a>`;
+        }
+    </script>
+</body>
+</html>
