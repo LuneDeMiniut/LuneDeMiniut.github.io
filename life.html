@@ -127,11 +127,11 @@
         margin: 5px auto;
         cursor: pointer;
         transition: transform 0.3s ease-in-out;
-    }
+        }
 
         .apple-music-icon:hover {
             transform: scale(1.1);
-    }
+        }
 
         @media (min-width: 768px) {
             .container {
@@ -145,6 +145,27 @@
             .info {
                 width: 50%;
             }
+        }    
+
+        .footer {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        }
+    
+        .footer img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .footer img:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -162,14 +183,6 @@
         </div>
     </div>
     <script>
-        function showInfo(title, link, caption, image) {
-            document.getElementById('info').innerHTML = `
-                <img src="${image}" alt="${title}" onclick="window.open('${link}', '_blank')">
-                <h2>${title}</h2>
-                <p>${caption}</p>
-            `;
-        }
-
         function showInfo(title, link, caption, image) {
         document.getElementById('info').innerHTML = `
             <img src="${image}" alt="${title}" onclick="window.open('${link}', '_blank')">
